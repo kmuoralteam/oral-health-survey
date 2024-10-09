@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+label {
+    display: inline-block; /* 改為 inline-block，讓選項橫向排列 */
+    margin-top: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#feedback {
+    margin-top: 20px;
+}
+
+/* 讓每個按鈕和其標籤（選項文字）並排 */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* 控制換行 */
+    gap: 20px; /* 每個選項之間的間距 */
+}
+
+.radio-group label, .checkbox-group label {
+    display: inline-flex; /* 讓按鈕和文字在同一行 */
+    align-items: center; /* 垂直居中 */
+    margin: 0 10px 10px 0; /* 控制按鈕和文字的間距 */
+}
+
+.radio-group input[type="radio"], 
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px; /* 控制按鈕和文字之間的距離 */
+}
+
+/* 單選按鈕與文字在同一行 */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+    width: auto; /* 讓單選按鈕保持自適應大小 */
+}
+
+/* 複選按鈕與文字在同一行 */
+.checkbox-group {
+    display: flex;/* 使用 Flexbox 使元素在同一行 */
+    flex-wrap: wrap;/* 當空間不足時換行 */
+    gap: 15px;/* 控制元素之間的間距 */
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+    width: auto; /* 讓複選按鈕保持自適應大小 */
+}
