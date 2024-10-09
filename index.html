@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高醫口衛隊口腔健康調查問卷</title>
+    <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #f4f7f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .form-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: #fefefe;
+        }
+
+        .form-section h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>高醫口衛隊口腔健康調查問卷</h1>
+
+        <!-- 基本資料部分 -->
+        <section id="basic-info" class="form-section">
+            <h2>基本資料</h2>
+            <div class="section">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+            </div>
+
+            <div class="section">
+                <label for="gender">性別</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="男" required> 男
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="女"> 女
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="其他"> 其他
+                    </label>
+                </div>
+            </div>
+
+            <div class="section">
+                <label for="age">年齡</label>
+                <input type="number" id="age" name="age" placeholder="請輸入您的年齡" min="0" required>
+            </div>
+
+            <div class="section">
+                <label for="occupation">職業</label>
+                <input type="text" id="occupation" name="occupation" placeholder="請輸入您的職業">
+            </div>
+        </section>
+
+        <!-- 第一部分：自然牙數量與刷牙習慣 -->
+        <section id="section1">
+            <h2>第一部分：牙齒狀況</h2>
+            <label>您有多少顆自然牙？</label>
+            <div class="radio-group">
+                <input type="radio" id="teeth0" name="naturalTeeth" value="0">
+                <label for="teeth0">零顆</label>
+
+                <input type="radio" id="teeth1to9" name="naturalTeeth" value="1-9">
+                <label for="teeth1to9">一到九顆</label>
+
+                <input type="radio" id="teeth10to19" name="naturalTeeth" value="10-19">
+                <label for="teeth10to19">十到十九顆</label>
+
+                <input type="radio" id="teeth20plus" name="naturalTeeth" value="20+">
+                <label for="teeth20plus">二十顆以上</label>
+            </div>
+
+            <div id="denturesSection" style="display:none;">
+                <label>您是否有全口假牙？</label>
+                <div class="radio-group">
+                    <input type="radio" id="noDentures" name="fullDentures" value="none">
+                    <label for="noDentures">沒有</label>
+
+                    <input type="radio" id="upperDentures" name="fullDentures" value="upper">
+                    <label for="upperDentures">有上顎假牙</label>
+
+                    <input type="radio" id="lowerDentures" name="fullDentures" value="lower">
+                    <label for="lowerDentures">有下顎假牙</label>
+
+                    <input type="radio" id="bothDentures" name="fullDentures" value="both">
+                    <label for="bothDentures">上下顎都有</label>
+                </div>
+            </div>
+
+            <div id="brushingSection" style="display:none;">
+                <label>您每天刷牙的次數？</label>
+                <input type="number" id="brushingTimes" min="0" placeholder="請輸入次數">
+
+                <label>您什麼時候刷牙？（可複選）</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="morning" name="brushingTimesOfDay" value="起床後">
+                    <label for="morning">起床後</label>
+
+                    <input type="checkbox" id="afterBreakfast" name="brushingTimesOfDay" value="吃完早餐後">
+                    <label for="afterBreakfast">吃完早餐後</label>
+
+                    <input type="checkbox" id="afterLunch" name="brushingTimesOfDay" value="吃完午餐後">
+                    <label for="afterLunch">吃完午餐後</label>
+
+                    <input type="checkbox" id="afterDinner" name="brushingTimesOfDay" value="吃完晚餐後">
+                    <label for="afterDinner">吃完晚餐後</label>
+
+                    <input type="checkbox" id="beforeBed" name="brushingTimesOfDay" value="睡覺前">
+                    <label for="beforeBed">睡覺前</label>
+                </div>
+
+                <label>您每次刷牙的時間是多久？</label>
+                <div class="radio-group">
+                    <input type="radio" id="lessThan1Minute" name="brushingDuration" value="lessThan1Minute">
+                    <label for="lessThan1Minute">一分鐘內</label>
+
+                    <input type="radio" id="1to2Minutes" name="brushingDuration" value="1to2Minutes">
+                    <label for="1to2Minutes">一到兩分鐘</label>
+
+                    <input type="radio" id="3MinutesOrMore" name="brushingDuration" value="3MinutesOrMore">
+                    <label for="3MinutesOrMore">三分鐘或以上</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二部分：生活習慣 -->
+        <section id="lifestyle" class="form-section">
+            <h2>第二部分：生活習慣</h2>
+    
+            <label>您是否有抽菸的習慣？</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="smoking" value="是" onchange="toggleSmokingSection(true)"> 是
+                </label>
+                <label>
+                    <input type="radio" name="smoking" value="否" onchange="toggleSmokingSection(false)"> 否
+                </label>
+            </div>
+    
+            <div id="smokingDetails" class="hidden">
+                <label>您每天抽幾包菸？</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="smokingAmount" value="半包"> 半包</label>
+                    <label><input type="radio" name="smokingAmount" value="一包"> 一包</label>
+                    <label><input type="radio" name="smokingAmount" value="兩包"> 兩包</label>
+                    <label><input type="radio" name="smokingAmount" value="三包"> 三包</label>
+                    <label><input type="radio" name="smokingAmount" value="三包以上"> 三包以上</label>
+                </div>
+            </div>
+    
+            <label>您是否有喝酒的習慣？</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="drinking" value="是" onchange="toggleDrinkingSection(true)"> 是
+                </label>
+                <label>
+                    <input type="radio" name="drinking" value="否" onchange="toggleDrinkingSection(false)"> 否
+                </label>
+            </div>
+    
+            <div id="drinkingDetails" class="hidden">
+                <label>您每天喝多少瓶酒？</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="drinkingAmount" value="一瓶"> 一瓶</label>
+                    <label><input type="radio" name="drinkingAmount" value="兩瓶"> 兩瓶</label>
+                    <label><input type="radio" name="drinkingAmount" value="三瓶"> 三瓶</label>
+                    <label><input type="radio" name="drinkingAmount" value="三瓶以上"> 三瓶以上</label>
+                </div>
+            </div>
+    
+            <label>您是否有嚼檳榔的習慣？</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="betelNut" value="是" onchange="toggleBetelNutSection(true)"> 是
+                </label>
+                <label>
+                    <input type="radio" name="betelNut" value="否" onchange="toggleBetelNutSection(false)"> 否
+                </label>
+            </div>
+    
+            <div id="betelNutDetails" class="hidden">
+                <label>您每天嚼幾顆檳榔？</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="betelNutAmount" value="1-3顆"> 1-3顆</label>
+                    <label><input type="radio" name="betelNutAmount" value="3-5顆"> 3-5顆</label>
+                    <label><input type="radio" name="betelNutAmount" value="5-10顆"> 5-10顆</label>
+                    <label><input type="radio" name="betelNutAmount" value="10顆以上"> 10顆以上</label>
+                </div>
+            </div>
+        </section>
+    
+        <!-- 第三部分：口腔問題 -->
+        <section id="section3">
+            <h2>第三部分：口腔健康</h2>
+            <label>您有沒有任何口腔不適？</label>
+            <input type="text" id="oralIssues" placeholder="描述您的不適">
+    
+            <label>您有沒有其他問題？</label>
+            <input type="text" id="otherQuestions" placeholder="描述您的問題">
+        </section>
+
+        <button onclick="submitForm()">提交問卷</button>
+
+        <div id="feedback" style="display:none;">
+            <h2>回饋內容</h2>
+            <p id="feedbackText"></p>
+        </div>
+    </div>
+
+    <script>
+        // 控制抽菸選項顯示
+        function toggleSmokingSection(show) {
+            document.getElementById('smokingDetails').style.display = show ? 'block' : 'none';
+        }
+    
+        // 控制喝酒選項顯示
+        function toggleDrinkingSection(show) {
+            document.getElementById('drinkingDetails').style.display = show ? 'block' : 'none';
+        }
+    
+        // 控制嚼檳榔選項顯示
+        function toggleBetelNutSection(show) {
+            document.getElementById('betelNutDetails').style.display = show ? 'block' : 'none';
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
