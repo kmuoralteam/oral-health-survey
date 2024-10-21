@@ -26,8 +26,25 @@ function submitForm() {
     const smoking = document.querySelector('input[name="smoking"]:checked') ? document.querySelector('input[name="smoking"]:checked').value : null;
     const drinking = document.querySelector('input[name="drinking"]:checked') ? document.querySelector('input[name="drinking"]:checked').value : null;
     const betelNut = document.querySelector('input[name="betelNut"]:checked') ? document.querySelector('input[name="betelNut"]:checked').value : null;
-    const oralIssues = document.getElementById("oralIssues").value ? document.getElementById("oralIssues").value : "未填寫";
-    const otherQuestions = document.getElementById("otherQuestions").value ? document.getElementById("otherQuestions").value : "無其他問題";
+    const question31 = document.getElementById('input[name="question3-1"]:checked').value ? document.getElementById('input[name="question3-1"]:checked').value : null;
+    const question32 = document.getElementById('input[name="question3-2"]:checked').value ? document.getElementById('input[name="question3-2"]:checked').value : null;
+    const question33 = document.getElementById('input[name="question3-3"]:checked').value ? document.getElementById('input[name="question3-3"]:checked').value : null;
+    const question34 = document.getElementById('input[name="question3-4"]:checked').value ? document.getElementById('input[name="question3-4"]:checked').value : null;
+    const question35 = document.getElementById('input[name="question3-5"]:checked').value ? document.getElementById('input[name="question3-5"]:checked').value : null;
+    const question36 = document.getElementById('input[name="question3-6"]:checked').value ? document.getElementById('input[name="question3-6"]:checked').value : null;
+    const question37 = document.getElementById('input[name="question3-7"]:checked').value ? document.getElementById('input[name="question3-7"]:checked').value : null;
+    const question41 = document.getElementById('input[name="question4-1"]:checked').value ? document.getElementById('input[name="question4-1"]:checked').value : null;
+    const question42 = document.getElementById('input[name="question4-2"]:checked').value ? document.getElementById('input[name="question4-2"]:checked').value : null;
+    const question43 = document.getElementById('input[name="question4-3"]:checked').value ? document.getElementById('input[name="question4-3"]:checked').value : null;
+    const question44 = document.getElementById('input[name="question4-4"]:checked').value ? document.getElementById('input[name="question4-4"]:checked').value : null;
+    const question45 = document.getElementById('input[name="question4-5"]:checked').value ? document.getElementById('input[name="question4-5"]:checked').value : null;
+    const question46 = document.getElementById('input[name="question4-6"]:checked').value ? document.getElementById('input[name="question4-6"]:checked').value : null;
+    const question47 = document.getElementById('input[name="question4-7"]:checked').value ? document.getElementById('input[name="question4-7"]:checked').value : null;
+    const question48 = document.getElementById('input[name="question4-8"]:checked').value ? document.getElementById('input[name="question4-8"]:checked').value : null;
+    const question49 = document.getElementById('input[name="question4-9"]:checked').value ? document.getElementById('input[name="question4-9"]:checked').value : null;
+    const question410 = document.getElementById('input[name="question4-10"]:checked').value ? document.getElementById('input[name="question4-10"]:checked').value : null;
+
+
 
     let feedbackText = "";
 
