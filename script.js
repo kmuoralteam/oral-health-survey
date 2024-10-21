@@ -52,18 +52,23 @@ function submitForm() {
     if (teethCount === "0") {
         if (fullDentures === "both") {
             feedbackText += "您有上下顎的全口假牙，請注意假牙清潔與保養，定期檢查口腔健康。<br>";
-        } else if (fullDentures === "upper") {
+        } 
+        else if (fullDentures === "upper") {
             feedbackText += "您有上顎假牙，請注意清潔與保養，並定期檢查。<br>";
-        } else if (fullDentures === "lower") {
+        } 
+        else if (fullDentures === "lower") {
             feedbackText += "您有下顎假牙，請注意清潔與保養，並定期檢查。<br>";
-        } else {
+        }
+        else {
             feedbackText += "您是全口無牙患者，請留意飲食與口腔健康，建議定期檢查。<br>";
         }
-    } else if (teethCount) {
+    } 
+    else if (teethCount) {
         feedbackText += `您有自然牙，並且每天刷牙 ${brushingTimes} 次。<br>`;
         if (brushingTimesOfDay.length > 0) {
             feedbackText += `您在 ${brushingTimesOfDay.join('、')} 時刷牙。<br>`;
-        } else {
+        } 
+        else {
             feedbackText += "您沒有選擇刷牙的時間。<br>";
         }
     }
@@ -71,7 +76,8 @@ function submitForm() {
     // 刷牙時間不夠長的回饋
     if (brushingDuration && brushingDuration !== "3MinutesOrMore") {
         feedbackText += "建議每次刷牙的時間至少三分鐘，以確保清潔效果。<br>";
-    } else if (!brushingDuration) {
+    } 
+    else if (!brushingDuration) {
         feedbackText += "您尚未選擇刷牙的時間長度。<br>";
     }
     
@@ -84,9 +90,5 @@ function submitForm() {
     if (betelNut === "是") {
         feedbackText += "嚼檳榔是口腔癌的高風險行為，建議戒除檳榔並定期檢查。<br>";
     }
-
-
-    // 顯示回饋
-    document.getElementById("feedbackText").innerHTML = feedbackText;
-    document.getElementById("feedback").style.display = "block";
+    
 }
