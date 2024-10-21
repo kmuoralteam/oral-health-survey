@@ -43,6 +43,8 @@ function submitForm() {
     const question48 = document.querySelector('input[name="question4-8"]:checked').value ? document.querySelector('input[name="question4-8"]:checked').value : null;
     const question49 = document.querySelector('input[name="question4-9"]:checked').value ? document.querySelector('input[name="question4-9"]:checked').value : null;
     const question410 = document.querySelector('input[name="question4-10"]:checked').value ? document.querySelector('input[name="question4-10"]:checked').value : null;
+    const question411 = document.querySelector('input[name="question4-11"]:checked').value ? document.querySelector('input[name="question4-11"]:checked').value : null;
+    const question412 = document.querySelector('input[name="question4-12"]:checked').value ? document.querySelector('input[name="question4-12"]:checked').value : null;
 
    
     let feedbackText = "";
@@ -90,16 +92,21 @@ function submitForm() {
         feedbackText += "嚼檳榔是口腔癌的高風險行為，建議戒除檳榔並定期檢查。<br>";
     }
 
-    var s_answer = [question41, question42, question43, question44, question45, question46, question47, question48, question49, question410]
-    var answer = ["口腔中的細菌會利用食物中的糖分產生酸", "象牙質", "餐後及睡前", "附在牙齒表面的細菌及其產物", "牙結石及牙菌斑等堆積在齒齦下", "強化琺瑯質抗酸能力", "三十分鐘", "牙線", "半年", "口腔清潔不徹底"]
-    var r_answer = ["1. 蛀牙的原因是因為口腔中的細菌會利用食物中的糖分產生酸。", "2. 蛀牙侵蝕到牙齒的象牙質後，牙齒接觸冷或熱的食物會覺得痠痛。", "3. 餐後及睡前刷牙最能保護牙齒。", "4. 牙菌斑是附在牙齒表面的細菌及其產物。", "5. 牙周病的主要原因是堆積在牙齦下的牙結石及牙菌斑。", "6. 氟化物對牙齒的主要功能是強化琺瑯質抗酸能力。", "7. 使用完含氟漱口水後，至少要經過三十分鐘才能吃東西喝水。", "8. 清潔牙齒鄰接面(牙縫)最好的工具是牙線。", "9. 我們應每半年做一次口腔檢查。", "10. 牙齦發炎的主要原因是口腔清潔不徹底。"]
+    var s_answer = [question41, question42, question43, question44, question45, question46, question47, question48, question49, question410, question411, question412]
+    var answer = ["口腔中的細菌會利用食物中的糖分產生酸", "象牙質", "餐後及睡前", "附在牙齒表面的細菌及其產物", "牙結石及牙菌斑等堆積在齒齦下", "強化琺瑯質抗酸能力", "三十分鐘", "牙線", "半年", "口腔清潔不徹底", "每次刷兩顆，來回刷十下", "放在冷開水、生理食鹽水、冰牛奶裡或含在口中"]
+    var r_answer = ["1. 蛀牙的原因是因為口腔中的細菌會利用食物中的糖分產生酸。", "2. 蛀牙侵蝕到牙齒的象牙質後，牙齒接觸冷或熱的食物會覺得痠痛。", "3. 餐後及睡前刷牙最能保護牙齒。", "4. 牙菌斑是附在牙齒表面的細菌及其產物。", "5. 牙周病的主要原因是堆積在牙齦下的牙結石及牙菌斑。", "6. 氟化物對牙齒的主要功能是強化琺瑯質抗酸能力。", "7. 使用完含氟漱口水後，至少要經過三十分鐘才能吃東西喝水。", "8. 清潔牙齒鄰接面(牙縫)最好的工具是牙線。", "9. 我們應每半年做一次口腔檢查。", "10. 牙齦發炎的主要原因是口腔清潔不徹底。", "11. 貝式刷牙法的要領為牙刷以45°放在牙齒跟牙齦中間，一次刷兩顆，每次刷十下", "12. 若牙齒撞掉脫離牙床，在就醫請牙醫種回去前應將牙齒放在冷開水、生理食鹽水、冰牛奶裡或含在口中"]
     var feedbackanswer = "您第四部分錯誤的地方的解答：<br>";
     var i = 0;
-    while (i <= 9){
+    var j = 0;
+    while (i <= 11){
         if (s_answer[i] != answer[i]){
             feedbackanswer += r_answer[i] + "<br>";
+            j = j + 1;
         }
         i = i + 1;
+    }
+    if (j == 0){
+        feedbackanswer = "您第四部份的回答全部正確，很棒！<br>"
     }
 
     feedbackText += feedbackanswer;
