@@ -85,12 +85,6 @@ function submitForm() {
         feedbackText += "嚼檳榔是口腔癌的高風險行為，建議戒除檳榔並定期檢查。<br>";
     }
 
-    if (oralIssues !== "未填寫") {
-        feedbackText += `您提到的口腔不適是：${oralIssues}。建議儘早就醫檢查。<br>`;
-    }
-    if (otherQuestions !== "無其他問題") {
-        feedbackText += `您詢問的其他問題是：${otherQuestions}。我們會進一步回答您的問題。<br>`;
-    }
 
     // 顯示回饋
     document.getElementById("feedbackText").innerHTML = feedbackText;
