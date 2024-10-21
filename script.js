@@ -26,6 +26,24 @@ function submitForm() {
     const smoking = document.querySelector('input[name="smoking"]:checked') ? document.querySelector('input[name="smoking"]:checked').value : null;
     const drinking = document.querySelector('input[name="drinking"]:checked') ? document.querySelector('input[name="drinking"]:checked').value : null;
     const betelNut = document.querySelector('input[name="betelNut"]:checked') ? document.querySelector('input[name="betelNut"]:checked').value : null;
+    const question31 = document.querySelector('input[name="question3-1"]:checked').value ? document.querySelector('input[name="question3-1"]:checked').value : null;
+    const question32 = document.querySelector('input[name="question3-2"]:checked').value ? document.querySelector('input[name="question3-2"]:checked').value : null;
+    const question33 = document.querySelector('input[name="question3-3"]:checked').value ? document.querySelector('input[name="question3-3"]:checked').value : null;
+    const question34 = document.querySelector('input[name="question3-4"]:checked').value ? document.querySelector('input[name="question3-4"]:checked').value : null;
+    const question35 = document.querySelector('input[name="question3-5"]:checked').value ? document.querySelector('input[name="question3-5"]:checked').value : null;
+    const question36 = document.querySelector('input[name="question3-6"]:checked').value ? document.querySelector('input[name="question3-6"]:checked').value : null;
+    const question37 = document.querySelector('input[name="question3-7"]:checked').value ? document.querySelector('input[name="question3-7"]:checked').value : null;
+    const question41 = document.querySelector('input[name="question4-1"]:checked').value ? document.querySelector('input[name="question4-1"]:checked').value : null;
+    const question42 = document.querySelector('input[name="question4-2"]:checked').value ? document.querySelector('input[name="question4-2"]:checked').value : null;
+    const question43 = document.querySelector('input[name="question4-3"]:checked').value ? document.querySelector('input[name="question4-3"]:checked').value : null;
+    const question44 = document.querySelector('input[name="question4-4"]:checked').value ? document.querySelector('input[name="question4-4"]:checked').value : null;
+    const question45 = document.querySelector('input[name="question4-5"]:checked').value ? document.querySelector('input[name="question4-5"]:checked').value : null;
+    const question46 = document.querySelector('input[name="question4-6"]:checked').value ? document.querySelector('input[name="question4-6"]:checked').value : null;
+    const question47 = document.querySelector('input[name="question4-7"]:checked').value ? document.querySelector('input[name="question4-7"]:checked').value : null;
+    const question48 = document.querySelector('input[name="question4-8"]:checked').value ? document.querySelector('input[name="question4-8"]:checked').value : null;
+    const question49 = document.querySelector('input[name="question4-9"]:checked').value ? document.querySelector('input[name="question4-9"]:checked').value : null;
+    const question410 = document.querySelector('input[name="question4-10"]:checked').value ? document.querySelector('input[name="question4-10"]:checked').value : null;
+
    
     let feedbackText = "";
 
@@ -71,6 +89,21 @@ function submitForm() {
     if (betelNut === "是") {
         feedbackText += "嚼檳榔是口腔癌的高風險行為，建議戒除檳榔並定期檢查。<br>";
     }
+
+    var s_answer = [question41, question42, question43, question44, question45, question46, question47, question48, question49, question410]
+    var answer = ["口腔中的細菌會利用食物中的糖分產生酸", "象牙質", "餐後及睡前", "附在牙齒表面的細菌及其產物", "牙結石及牙菌斑等堆積在齒齦下", "強化琺瑯質抗酸能力", "三十分鐘", "牙線", "半年", "口腔清潔不徹底"]
+    var r_answer = ["1. 蛀牙的原因是因為口腔中的細菌會利用食物中的糖分產生酸。", "2. 蛀牙侵蝕到牙齒的象牙質後，牙齒接觸冷或熱的食物會覺得痠痛。", "3. 餐後及睡前刷牙最能保護牙齒。", "4. 牙菌斑是附在牙齒表面的細菌及其產物。", "5. 牙周病的主要原因是堆積在牙齦下的牙結石及牙菌斑。", "6. 氟化物對牙齒的主要功能是強化琺瑯質抗酸能力。", "7. 使用完含氟漱口水後，至少要經過三十分鐘才能吃東西喝水。", "8. 清潔牙齒鄰接面(牙縫)最好的工具是牙線。", "9. 我們應每半年做一次口腔檢查。", "10. 牙齦發炎的主要原因是口腔清潔不徹底。"]
+    var feedbackanswer = "您第四部分錯誤的地方的解答：<br>";
+    var i = 0;
+    while (i <= 9){
+        if (s_answer[i] != answer[i]){
+            feedbackanswer += r_answer[i] + "<br>";
+        }
+        i = i + 1;
+    }
+
+    feedbackText += feedbackanswer;
+
     // 顯示回饋
     document.getElementById("feedbackText").innerHTML = feedbackText;
     document.getElementById("feedback").style.display = "block";
