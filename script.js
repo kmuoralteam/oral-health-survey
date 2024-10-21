@@ -90,5 +90,7 @@ function submitForm() {
     if (betelNut === "是") {
         feedbackText += "嚼檳榔是口腔癌的高風險行為，建議戒除檳榔並定期檢查。<br>";
     }
-    
+    // 顯示回饋
+    document.getElementById("feedbackText").innerHTML = feedbackText;
+    document.getElementById("feedback").style.display = "block";
 }
