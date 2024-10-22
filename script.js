@@ -45,6 +45,7 @@ function submitForm() {
     const question410 = document.querySelector('input[name="question4-10"]:checked').value ? document.querySelector('input[name="question4-10"]:checked').value : null;
     const question411 = document.querySelector('input[name="question4-11"]:checked').value ? document.querySelector('input[name="question4-11"]:checked').value : null;
     const question412 = document.querySelector('input[name="question4-12"]:checked').value ? document.querySelector('input[name="question4-12"]:checked').value : null;
+    const subbtn = document.querySelector('input[name="personal_privacy"]:checked').value ? document.querySelector('input[name="personal_privacy"]:checked').value : null;
 
    
     let feedbackText = "";
@@ -52,16 +53,16 @@ function submitForm() {
     // 個性化回饋部分
     if (teethCount === "0") {
         if (fullDentures === "both") {
-            feedbackText += "您有上下顎的全口假牙，請注意假牙與口腔的清潔，定期檢查口腔健康。現在要教你清潔假牙的正確方式：第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？<br>";
+            feedbackText += "您有上下顎的全口假牙，請注意假牙與口腔的清潔，定期檢查口腔健康。現在要教你清潔假牙的正確方式：<br>第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。<br>第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？<br>";
         } 
         else if (fullDentures === "upper") {
-            feedbackText += "您有上顎假牙，請注意假牙與口腔的清潔，並定期檢查口腔健康。現在要教你清潔假牙的正確方式：第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？。<br>";
+            feedbackText += "您有上顎假牙，請注意假牙與口腔的清潔，並定期檢查口腔健康。現在要教你清潔假牙的正確方式：<br>第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。<br>第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？。<br>";
         } 
         else if (fullDentures === "lower") {
-            feedbackText += "您有下顎假牙，請注意假牙與口腔的清潔，並定期檢查口腔健康。現在要教你清潔假牙的正確方式：第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？。<br>";
+            feedbackText += "您有下顎假牙，請注意假牙與口腔的清潔，並定期檢查口腔健康。現在要教你清潔假牙的正確方式：<br>第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。<br>第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？。<br>";
         }
         else {
-            feedbackText += "您是全口無牙患者，請留意飲食與口腔健康，建議定期檢查。有專業的醫師建議可購買「海綿刷」，每日保持至少2次、每次至少2分鐘的清潔。若高齡長輩無法順利將牙膏泡沫吐出，可在海綿刷沾上白開水，小心擦拭牙齦表面，不但可以確保口腔中不會有過多細菌滋生，也能稍微協助長輩按摩牙齦與牙周，是全口無牙者清潔兼具復健的方式！您可以在家試試看用這樣的方式清潔口腔喔！<br>";
+            feedbackText += "您是全口無牙患者，請留意飲食與口腔健康，建議定期檢查。有專業的醫師建議可購買「海綿刷」，每日保持至少2次、每次至少2分鐘的清潔。<br>若高齡長輩無法順利將牙膏泡沫吐出，可在海綿刷沾上白開水，小心擦拭牙齦表面，不但可以確保口腔中不會有過多細菌滋生，也能稍微協助長輩按摩牙齦與牙周，是全口無牙者清潔兼具復健的方式！您可以在家試試看用這樣的方式清潔口腔喔！<br>";
         }
     } 
     else if (teethCount) {
@@ -117,7 +118,13 @@ function submitForm() {
 
     feedbackText += feedbackanswer;
 
-    // 顯示回饋
-    document.getElementById("feedbackText").innerHTML = feedbackText;
-    document.getElementById("feedback").style.display = "block";
+    if (subbtn == "Yes") {
+        // 顯示回饋
+        document.getElementById("feedbackText").innerHTML = feedbackText;
+        document.getElementById("feedback").style.display = "block";
+    } else {
+        document.getElementById("feedbackText").innerHTML = feedbackText;
+        document.getElementById("feedback").style.display = "block";
+    }
+    
 }
