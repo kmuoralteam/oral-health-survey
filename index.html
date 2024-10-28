@@ -100,11 +100,10 @@
 <body>
     <div class="container">
         <h1>高醫口衛隊口腔健康調查問卷</h1>
-        
-        <p>歡迎您使用本網站，本網站依據【個人資料保護法】蒐集、處理及利用您的個人資料包含識別個人姓名、年齡、職業等。上述個人資料之蒐集、處理及利用，將僅限本網站業務需要使用，並遵守個資法之規定妥善保護您的個人資訊。</p>
-        <p>依據個資法第 3 條規定，您可向本社行使之個資權利包括：查詢、閱覽、複製、補充、更正、處理、利用及刪除。您可以選擇是否提供個資，惟若選擇不提供或是提供不完整，將無法追蹤您的口腔狀況及協助您了解口腔相關的問題。<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021"> 個人資料保護法 </a></p>
-        <label><input type="radio" id="personal_privacy" name = "personal_privacy" value="Yes"> 我已了解並同意</label>
-        
+        <div class="form-section">
+            <p>歡迎您使用本網站，本網站依據【個人資料保護法】蒐集、處理及利用您的個人資料包含識別個人姓名、年齡、職業等。上述個人資料之蒐集、處理及利用，將僅限本網站業務需要使用，並遵守個資法之規定妥善保護您的個人資訊。依據個資法第 3 條規定，您可向本社行使之個資權利包括：查詢、閱覽、複製、補充、更正、處理、利用及刪除。您可以選擇是否提供個資，惟若選擇不提供或是提供不完整，將無法追蹤您的口腔狀況及協助您了解口腔相關的問題。<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021"> 個人資料保護法 </a></p>
+            <label><input type="radio" id="personal_privacy" name = "personal_privacy" value="Yes"> 我已了解並同意</label>
+        </div>
         <!-- 基本資料部分 -->
         <section id="basic-info" class="form-section">
             <h2>基本資料</h2>
@@ -141,7 +140,7 @@
         </section>
 
         <!-- 第一部分：自然牙數量與刷牙習慣 -->
-        <section id="section1">
+        <section id="section1" class="form-section">
             <h2>第一部分：牙齒狀況</h2>
             <label>您有多少顆自然牙？</label>
             <div class="radio-group">
@@ -449,6 +448,15 @@
         </div>
     </div>
 
+    <p class="" align="center">
+    <iframe
+        src="https://www.chatbase.co/chatbot-iframe/hjkh2x5qvB3CqeL20Xr4C"
+        width="750px"
+        style="height: 100%; min-height: 700px"
+        frameborder="0"
+    ></iframe>
+    </p>
+
     <script>
         // 控制抽菸選項顯示
         function toggleSmokingSection(show) {
@@ -469,10 +477,5 @@
 
     <script src="script.js"></script>
 </body>
-<iframe
-    src="https://www.chatbase.co/chatbot-iframe/hjkh2x5qvB3CqeL20Xr4C"
-    width="100%"
-    style="height: 100%; min-height: 700px"
-    frameborder="0"
-></iframe>
+
 </html>
