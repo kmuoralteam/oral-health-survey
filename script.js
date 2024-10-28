@@ -123,8 +123,7 @@ function submitForm() {
         document.getElementById("feedbackText").innerHTML = feedbackText;
         document.getElementById("feedback").style.display = "block";
     } else {
-        document.getElementById("feedbackText").innerHTML = feedbackText;
-        document.getElementById("feedback").style.display = "block";
+        alert("請先同意隱私權政策再提交");
     }
     
-}
+}  

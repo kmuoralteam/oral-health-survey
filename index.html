@@ -100,17 +100,18 @@
 <body>
     <div class="container">
         <h1>高醫口衛隊口腔健康調查問卷</h1>
-
+        
         <p>歡迎您使用本網站，本網站依據【個人資料保護法】蒐集、處理及利用您的個人資料包含識別個人姓名、年齡、職業等。上述個人資料之蒐集、處理及利用，將僅限本網站業務需要使用，並遵守個資法之規定妥善保護您的個人資訊。</p>
         <p>依據個資法第 3 條規定，您可向本社行使之個資權利包括：查詢、閱覽、複製、補充、更正、處理、利用及刪除。您可以選擇是否提供個資，惟若選擇不提供或是提供不完整，將無法追蹤您的口腔狀況及協助您了解口腔相關的問題。<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021"> 個人資料保護法 </a></p>
-        <label><input type="radio" name = "personal_privacy" value="Yes"> 我已了解並同意</label>
-
+        <label><input type="radio" id="personal_privacy" name = "personal_privacy" value="Yes"> 我已了解並同意</label>
+        
         <!-- 基本資料部分 -->
         <section id="basic-info" class="form-section">
             <h2>基本資料</h2>
+            
             <div class="section">
                 <label for="name">姓名</label>
-                <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+                <input type="text" name="name" placeholder="請輸入您的姓名" required>
             </div>
 
             <div class="section">
@@ -130,13 +131,13 @@
 
             <div class="section">
                 <label for="age">年齡</label>
-                <input type="number" id="age" name="age" placeholder="請輸入您的年齡" min="0" required>
+                <input type="number" name="age" placeholder="請輸入您的年齡" min="0" required>
             </div>
 
             <div class="section">
                 <label for="occupation">職業</label>
-                <input type="text" id="occupation" name="occupation" placeholder="請輸入您的職業">
-            </div>
+                <input type="text" name="occupation" placeholder="請輸入您的職業">
+            </div>        
         </section>
 
         <!-- 第一部分：自然牙數量與刷牙習慣 -->
@@ -277,7 +278,7 @@
         </section>
     
         <!-- 第三部分：口腔保健問題 -->
-        <section id="section3">
+        <section id="section3" class="form-section">
             <h2>第三部分：口腔保健態度</h2>
             <label>我覺得吃完東西立刻刷牙是很重要的。</label>
             <div class="radio-group">
@@ -338,7 +339,7 @@
         </section>
 
         <!-- 第四部分：口腔保健認知 -->
-        <section id="section4">
+        <section id="section4" class="form-section">
             <h2>第四部分：口腔保健認知</h2>
             <label>以下各題，是想了解你的口腔衛生知識，請仔細閱讀每一個題目，並選擇一個你認為正確的答案，若不知道答案，請勾選不知道。</label>
             
@@ -439,12 +440,12 @@
             </div>
 
         </section>
-
-        <button type="button" onclick="submitForm()" >提交問卷</button>
+        </form>
+        <button type="button" id="submit" onclick="submitForm()" >提交問卷</button>
 
         <div id="feedback" style="display:none;">
             <h2>回饋內容</h2>
-            <p id="feedbackText"></p>
+            <p id="feedbackText"></p> 
         </div>
     </div>
 
@@ -463,6 +464,7 @@
         function toggleBetelNutSection(show) {
             document.getElementById('betelNutDetails').style.display = show ? 'block' : 'none';
         }
+        
     </script>
 
     <script src="script.js"></script>
