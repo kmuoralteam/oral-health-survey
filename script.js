@@ -15,7 +15,20 @@ document.querySelectorAll('input[name="naturalTeeth"]').forEach(radio => {
         }
     });
 });
+// 控制抽菸選項顯示
+function toggleSmokingSection(show) {
+    document.getElementById('smokingDetails').style.display = show ? 'block' : 'none';
+}
 
+// 控制喝酒選項顯示
+function toggleDrinkingSection(show) {
+    document.getElementById('drinkingDetails').style.display = show ? 'block' : 'none';
+}
+
+// 控制嚼檳榔選項顯示
+function toggleBetelNutSection(show) {
+    document.getElementById('betelNutDetails').style.display = show ? 'block' : 'none';
+}
 // 表單提交後的回饋處理
 function submitForm() {
 
@@ -123,4 +136,29 @@ function submitForm() {
     
 }
 
+function App() {
+    window.handleResponse = (res) => {
+    console.log(res)
+    }
 
+    const handleClick = () => {
+        const name = document.getElementById("name") ? document.getElementById("name") : "未填寫";
+        const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : null;
+        const age = document.getElementById("age") ? document.getElementById("age").value : "未填寫";
+        const occupation = document.getElementById("occupation") ? document.getElementById("occupation").value : "未填寫";
+        let data = { name: name, gender: gender, age: age, occupation: occupation }
+        let queryString = Object.keys(data)
+            .map((key) => key + '=' + data[key])
+            .join('&')
+        const script = document.createElement('script')
+        script.src =
+            'https://script.google.com/macros/s/AKfycbzPabHrMu7GuHUp2yDbnh6O0gOYGQrgpO3l4FTYVxO3zlvRWRh2kx0Kxr5nwZ_pmMk/exec' +
+            queryString +
+            '&callback=handleResponse'
+        document.body.appendChild(script)
+    }
+    alert("提交數據");
+    return (
+        document.getElementById("submit").addEventListener("click", handleClick)
+    )
+}
