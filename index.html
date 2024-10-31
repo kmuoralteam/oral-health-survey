@@ -440,7 +440,7 @@
 
         </section>
 
-        <button type="button" id="submit" onclick="submitForm()" >提交問卷</button>
+        <button type="button" id="submit" onclick="submitForm(); submitdata()" >提交問卷</button>
 
         <div id="feedback" style="display:none;">
             <h2>回饋內容</h2>
@@ -458,21 +458,31 @@
     </p>
 
     <script>
-        // 控制抽菸選項顯示
-        function toggleSmokingSection(show) {
-            document.getElementById('smokingDetails').style.display = show ? 'block' : 'none';
-        }
-    
-        // 控制喝酒選項顯示
-        function toggleDrinkingSection(show) {
-            document.getElementById('drinkingDetails').style.display = show ? 'block' : 'none';
-        }
-    
-        // 控制嚼檳榔選項顯示
-        function toggleBetelNutSection(show) {
-            document.getElementById('betelNutDetails').style.display = show ? 'block' : 'none';
-        }
+        //提交數據
+        function submitdata() {
+            const formData = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+            };
 
+            fetch("https://script.google.com/macros/s/AKfycbwqP_KCbJ-3pe5F3y85oTx3vQbxCsZzunKK8KJKFN-MrNdpves3qvsJbowf7mrQ5Y1r/exec", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    alert("提交成功！");
+                } else {
+                    alert("提交失敗，請重試。");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        
     </script>
 
     <script src="script.js"></script>
