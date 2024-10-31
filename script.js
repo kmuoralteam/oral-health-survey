@@ -131,7 +131,7 @@ function submitForm() {
         // 顯示回饋
         document.getElementById("feedbackText").innerHTML = feedbackText;
         document.getElementById("feedback").style.display = "block";
-        alert("提交成功！請往下滑查看回饋及使用口腔衛生小助手！");
+        alert("提交成功！請往下滑查看表單回饋及使用口腔衛生小助手！");
     } else {
         alert("請先同意隱私權政策再提交！");
     }
