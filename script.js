@@ -55,11 +55,21 @@ function submitForm() {
     const question411 = document.querySelector('input[name="question4-11"]:checked') ? document.querySelector('input[name="question4-11"]:checked').value : null;
     const question412 = document.querySelector('input[name="question4-12"]:checked') ? document.querySelector('input[name="question4-12"]:checked').value : null;
     const subbtn = document.querySelector('input[name="personal_privacy"]:checked') ? document.querySelector('input[name="personal_privacy"]:checked').value : null;
+    const age = document.getElementById("age") ? document.getElementById("age").value : "未填寫年齡";
 
-   
     let feedbackText = "";
 
     // 個性化回饋部分
+    if (age <= 12) {
+        feedbackText += "兒童回應<br>"
+    } else if (12 < age <= 24) {
+        feedbackText += "青少年回應<br>"
+    } else if (24 < age <= 64) {
+        feedbackText += "中壯年回應<br>"
+    } else {
+        feedbackText += "老年回應<br>"
+    }
+
     if (teethCount === "0") {
         if (fullDentures === "both") {
             feedbackText += "您有上下顎的全口假牙，請注意假牙與口腔的清潔，定期檢查口腔健康。現在要教你清潔假牙的正確方式：<br>第一個步驟是要使用軟毛牙刷和清水清潔假牙，這邊要注意不可以使用牙膏喔！因為牙膏會磨傷我們的假牙。<br>第二個步驟是要使用假牙清潔錠，每個廠牌的假牙清潔錠不一樣有的泡5分鐘就要拿起來，有的要泡15分鐘，有的可以泡在裡面一整晚，泡到適當的時間時，我們把假牙放到新的一杯清水裡面我們就可以去睡覺了！隔天早上用清水沖一沖你就可以戴上去囉！這樣您學會嗎？<br>";
